@@ -1,3 +1,9 @@
-body {
-  padding-top: 70px;
+/*Home page*/
+div.card-body {
+  text-align: center;
+}
+
+div.card-footer {
+  display: flex;
+  justify-content: center;
 }

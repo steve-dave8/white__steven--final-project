@@ -27,6 +27,7 @@ const Listings = () => {
         }
         getData()
     }, [token])
+
     return (
         <Container>
             <Row>
@@ -35,10 +36,10 @@ const Listings = () => {
             <Table responsive>
                 <thead>
                     <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Phone Number</th>
-                    <th>Email</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,9 +51,9 @@ const Listings = () => {
                     }
                 </tbody>
             </Table>
-        <Row className="my-5">
-            <Button onClick={logout} color="primary">Logout</Button>
-        </Row>
+            <Row className="my-5">
+                <Button onClick={logout} color="primary">Logout</Button>
+            </Row>
         </Container>
     )
 }

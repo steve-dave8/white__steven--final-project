@@ -7,7 +7,7 @@ import Home from './components/pages/Home'
 import About from './components/pages/About'
 import Contact from './components/pages/Contact'
 import Login from './components/pages/Login'
-import Listing from './components/pages/Listing'
+import Listings from './components/pages/Listing'
 import PrivateRoute from './components/shared/PrivateRoute'
 
 function App() {
@@ -20,7 +20,7 @@ function App() {
           <Route exact path="/contact" component={Contact} />
           <Route exact path="/login" component={Login} />
           <PrivateRoute path="/submissions">
-            <Listing />
+            <Listings />
           </PrivateRoute>
         </Switch>
         <Footer />  
