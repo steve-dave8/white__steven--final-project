@@ -1,26 +1,3 @@
-/*Global*/
-body {
-  padding-top: 70px;
-}
-
-h2 {
-  text-align: center;
-}
-
-li.nav-item {
-  margin: 0 1rem;
-  background-color: #4889af;
-  border-radius: 5px;
-}
-
-li.nav-item:hover {
-  background-color: #6ba7ca;
-}
-
-a.nav-link {
-  color: white !important;
-}
-
 /*Home page*/
 div.card-body {
   text-align: center;
