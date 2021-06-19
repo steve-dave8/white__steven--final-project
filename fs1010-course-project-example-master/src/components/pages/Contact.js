@@ -8,11 +8,14 @@ const Contact = () => {
     const [email, setEmail] = useState("")
     const [phoneNumber, setPhoneNumber] = useState("")
     const [content, setContent] = useState("")
+    const [alertContent, setAlertContent] = useState(null)
 
-    const formSubmit = async event => {
+    const formSubmit = async (event) => {
         event.preventDefault()
+        console.log("start")
         const response = await fetch('http://localhost:4000/contact_form/entries', {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
@@ -21,10 +24,20 @@ const Contact = () => {
         })
         const payload = await response.json()
         if (response.status >= 400) {
-            alert(`Oops! Error: ${payload.message} for fields: ${payload.invalid.join(",")}`)
+            setAlertContent(`Error for fields: ${payload.invalid.join(",")}`)
         } else {
-            alert(`Congrats! Submission submitted with id: ${payload.id}`)
+            setAlertContent(null)
+            alert("Message received. Thank you for reaching out.")
+            resetForm()
         }
+        console.log("finish")
+    }
+
+    const resetForm = () => {
+        setName("")
+        setEmail("")
+        setPhoneNumber("")
+        setContent("")
     }
 
     return (
@@ -32,10 +45,11 @@ const Contact = () => {
             <Container>
                 <Card className="text-white bg-secondary my-5 py-4 text-center">
                     <CardBody>
-                        <CardText className="text-white m-0">Use form to reach me, I'll get back to you within 24 hours!</CardText>
+                        <CardText className="text-white m-0">Use form to reach me, I'll get back to you in one business day.</CardText>
                     </CardBody>
                 </Card>
                 <Form className="my-5" onSubmit={formSubmit}>
+                    <p style={{fontStyle: "italic"}}>All fields are required</p>
                     <FormGroup row>
                         <Label for="emailEntry" sm={2}>Email</Label>
                         <Col sm={10}>
@@ -43,11 +57,12 @@ const Contact = () => {
                         </Col>
                     </FormGroup>
                     <FormGroup row>
-                        <Label for="phoneEntry" sm={2}>Phone Number</Label>
+                        <Label for="phoneEntry" sm={2}>*Phone Number</Label>
                         <Col sm={10}>
                             <Input type="phone" name="phone" id="phoneEntry" placeholder="Enter phone number" value={phoneNumber} onChange={e => setPhoneNumber(e.target.value)}/>
                         </Col>
                     </FormGroup>
+                    <p style={{fontSize: "80%", marginLeft: "2rem"}}>*must be a 10-digit number with no dashes, brackets, etc.</p>
                     <FormGroup row>
                         <Label for="nameEntry" sm={2}>Full Name</Label>
                         <Col sm={10}>
@@ -61,9 +76,10 @@ const Contact = () => {
                             <Input type="textarea" name="text" id="messageEntry" required value={content} onChange={e => setContent(e.target.value)}/>
                         </Col>
                     </FormGroup>
+                    <div className={`alert ${!alertContent ? "hidden" : ""}`}>{alertContent}</div>
                     <FormGroup check row>
                         <Col sm={{ size: 10, offset: 2 }}>
-                            <Button color="success">Submit</Button>
+                            <Button color="success" type="submit">Submit</Button>
                         </Col>
                     </FormGroup>
                 </Form>
