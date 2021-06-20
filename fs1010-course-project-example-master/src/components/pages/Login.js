@@ -5,7 +5,7 @@ import { useHistory, useLocation } from 'react-router-dom'
 const Login = () => {
     let history = useHistory();
     let location = useLocation();
-    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [auth, setAuth] = useState(true)
 
@@ -13,19 +13,23 @@ const Login = () => {
         event.preventDefault()
         const response = await fetch('http://localhost:4000/auth', {
             method: 'POST',
+            mode: 'cors',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
               },
-            body: JSON.stringify({username, password})
+            body: JSON.stringify({email, password})
         })
         const payload = await response.json()
         if (response.status >= 400) {
             setAuth(false)
         } else {
-            sessionStorage.setItem('token', payload.token);
-            let { from } = location.state || { from: { pathname: "/" } };
-            history.replace(from);
+            sessionStorage.setItem('token', payload.token)
+            let { from } = location.state || { from: { pathname: "/submissions" } }
+            history.replace(from)
+            window.location.reload()
+            /*I use reload() to get the Navigation component to re-render. Perhaps not the best way
+            of doing this but the quickest/simplest method I could implement.*/
         }
     }
 
@@ -43,8 +47,8 @@ const Login = () => {
             <Row form>
               <Col md={6}>
                 <FormGroup>
-                  <Label for="usernameEntry">Username</Label>
-                  <Input type="text" name="username" id="usernameEntry" placeholder="Username" value={username} onChange={e => setUsername(e.target.value)}/>
+                  <Label for="usernameEntry">Email</Label>
+                  <Input type="text" name="username" id="usernameEntry" placeholder="example@gmail.com" value={email} onChange={e => setEmail(e.target.value)}/>
                 </FormGroup>
               </Col>
               <Col md={6}>

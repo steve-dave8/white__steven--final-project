@@ -17,3 +17,13 @@ div.card-footer {
 .hidden {
   display: none;
 }
+
+/*Submissions page*/
+#submissions td:first-child {
+  width: 20%;
+  padding-right: 2rem;
+}
+
+#submissions td:last-child {
+  width: 25%;
+}
