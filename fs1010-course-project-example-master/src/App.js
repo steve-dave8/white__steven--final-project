@@ -7,7 +7,8 @@ import Home from './components/pages/Home'
 import About from './components/pages/About'
 import Contact from './components/pages/Contact'
 import Login from './components/pages/Login'
-import Listings from './components/pages/Listing'
+import Listings from './components/pages/Listings'
+import CreateUser from './components/pages/CreateUser'
 import PrivateRoute from './components/shared/PrivateRoute'
 
 function App() {
@@ -17,11 +18,14 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/login" component={Login} />
+          <Route exact path="/contact" component={Contact} />     
           <PrivateRoute path="/submissions">
             <Listings />
           </PrivateRoute>
+          <PrivateRoute path="/create-user">
+            <CreateUser />
+          </PrivateRoute>
+          <Route exact path="/login" component={Login} />  
         </Switch>
         <Footer />  
     </BrowserRouter>

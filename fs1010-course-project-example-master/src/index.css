@@ -40,6 +40,14 @@ a.nav-link {
   color: white !important;
 }
 
+li.nav-item.private {
+  background-color: purple;
+}
+
+li.nav-item.private:hover {
+  background-color: #bb53bb
+}
+
 /*Footer*/
 footer {
   position: absolute;
