@@ -8,6 +8,15 @@ div.card-footer {
   justify-content: center;
 }
 
+/*About page*/
+.centerBtn {
+  margin: 0 auto;
+}
+
+figure#sample-code {
+  margin: 0 8%;
+}
+
 /*Contact page*/
 .alert {
   color: rgb(114, 5, 5);

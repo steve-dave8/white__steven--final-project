@@ -13,6 +13,11 @@ h2 {
   text-align: center;
 }
 
+hr {
+  border: 1px solid black;
+  width: 100%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -26,6 +31,11 @@ div#root {
 }
 
 /*Header*/
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 li.nav-item {
   margin: 0 1rem;
   background-color: #4889af;
