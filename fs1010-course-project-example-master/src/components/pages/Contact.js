@@ -12,7 +12,6 @@ const Contact = () => {
 
     const formSubmit = async (event) => {
         event.preventDefault()
-        console.log("start")
         const response = await fetch('http://localhost:4000/contact_form/entries', {
             method: 'POST',
             mode: 'cors',
@@ -30,7 +29,6 @@ const Contact = () => {
             alert("Message received. Thank you for reaching out.")
             resetForm()
         }
-        console.log("finish")
     }
 
     const resetForm = () => {

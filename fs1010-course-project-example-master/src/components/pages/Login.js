@@ -48,7 +48,7 @@ const Login = () => {
               <Col md={6}>
                 <FormGroup>
                   <Label for="usernameEntry">Email</Label>
-                  <Input type="text" name="username" id="usernameEntry" placeholder="example@gmail.com" value={email} onChange={e => setEmail(e.target.value)}/>
+                  <Input type="text" name="username" id="usernameEntry" placeholder="Valid email address" value={email} onChange={e => setEmail(e.target.value)}/>
                 </FormGroup>
               </Col>
               <Col md={6}>
