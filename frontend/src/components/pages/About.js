@@ -52,7 +52,7 @@ const About = () => {
                             how this "About" component was created.</p>               
                         </Col>
                     </Row>
-                    <Row className="my-5">
+                    <Row className="my-5" style={{flexDirection: "column"}}>
                         <hr />
                         <Button className="centerBtn" color="primary" href="/contact">Contact Me</Button>
                         <hr />

@@ -15,7 +15,7 @@ h2 {
 
 hr {
   border: 1px solid black;
-  width: 100%;
+  width: 40%;
 }
 
 code {
@@ -28,6 +28,15 @@ div#root {
   overflow: hidden;
   position: relative;
   padding-bottom: 120px; /* height of footer */
+}
+
+.alert {
+  color: rgb(114, 5, 5);
+  background-color: #f1d6d6;
+}
+
+.hidden {
+  display: none;
 }
 
 /*Header*/
@@ -51,7 +60,7 @@ a.nav-link {
 }
 
 li.nav-item.private {
-  background-color: purple;
+  background-color: #9c569c;
 }
 
 li.nav-item.private:hover {

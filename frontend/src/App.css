@@ -17,17 +17,11 @@ figure#sample-code {
   margin: 0 8%;
 }
 
-/*Contact page*/
-.alert {
-  color: rgb(114, 5, 5);
-  background-color: #f1d6d6;
-}
-
-.hidden {
-  display: none;
-}
-
 /*Submissions page*/
+table#submissions {
+  margin-top: 1rem;
+}
+
 #submissions td:first-child {
   width: 20%;
   padding-right: 2rem;

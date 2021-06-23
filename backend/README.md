@@ -28,12 +28,9 @@ A backend application for a contact us form. While entries can be submitted by a
     ```
 
 ## Dependencies
-After cloning this project, in your Terminal (while in the local repo) run the command "npm install" which will create a node_modules folder that contains the following dependencies:
+After cloning this project, in your Terminal (while in the backend folder) run the command "npm install" which will create a node_modules folder that contains the following dependencies:
 
 bcrypt ; dotenv ; esm ; express ; jsonwebtoken ; nodemon (as a dev dependency) ; uuid
-
-## Environment Setup
-Create a .env file in your main folder. In this file add the following variables: PORT, JWT_SECRET, DATA_USERS_LOCATION, DATA_ENTRIES_LOCATION. Assign appropriate values to these variables.
 
 ## Scripts
 These are shortcuts for commands you can enter in the Terminal. ex: you could enter "npm start" instead of "npm node index.js"

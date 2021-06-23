@@ -51,7 +51,7 @@ const Contact = () => {
                     <FormGroup row>
                         <Label for="emailEntry" sm={2}>Email</Label>
                         <Col sm={10}>
-                            <Input type="email" name="email" id="emailEntry" placeholder="Enter email to contact"  required value={email} onChange={e => setEmail(e.target.value) }/>
+                            <Input type="email" name="email" id="emailEntry" placeholder="Valid email address"  required value={email} onChange={e => setEmail(e.target.value) }/>
                         </Col>
                     </FormGroup>
                     <FormGroup row>
@@ -75,6 +75,8 @@ const Contact = () => {
                         </Col>
                     </FormGroup>
                     <div className={`alert ${!alertContent ? "hidden" : ""}`}>{alertContent}</div>
+                    {/*If alertContent is null the div would still take up space on the page which is why
+                    I use the 'hidden' class to change display to none.*/}
                     <FormGroup check row>
                         <Col sm={{ size: 10, offset: 2 }}>
                             <Button color="success" type="submit">Submit</Button>

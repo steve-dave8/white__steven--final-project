@@ -13,7 +13,7 @@ import PrivateRoute from './components/shared/PrivateRoute'
 
 function App() {
   return (
-   <BrowserRouter>
+    <BrowserRouter>
         <Navigation />
         <Switch>
           <Route exact path="/" component={Home} />
