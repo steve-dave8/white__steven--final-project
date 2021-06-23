@@ -21,10 +21,12 @@ const Navigation = () => {
     if (status){
         setTimeout(function (){
             sessionStorage.removeItem('token')
-            setToken(status)
-            alert("Sorry, your session has timed out. You will be logged out and returned to the home page. To access protected pages please login again.")
-            history.push("/")
-        }, 1000*60*60*2)
+            setToken(false)
+            history.push("/login")
+            setTimeout(function(){
+                alert("Sorry, your session has timed out. You have been logged out and returned to the login page. To access protected pages please login again.")
+            }, 1000) //Add small delay to alert to ensure previous lines run and complete first.             
+        }, 1000*60*60*2) 
         /*The token expires after two hours. While protected routes and their data will no longer be accessible the associated pages
         will still be visible. This timeout will remove them from view. Not the best for UX but I think it gives more security.
         If I knew how to do it I could refresh the token until a certain length of inactivity from the user is reached.*/
@@ -34,7 +36,7 @@ const Navigation = () => {
         <header>
             <Navbar dark color="dark" expand="md" fixed="top">
                 <Container>
-                    <NavbarBrand href="">Example Portfolio Site</NavbarBrand>
+                    <NavbarBrand href="/">Example Portfolio Site</NavbarBrand>
                     <NavbarToggler onClick={toggle} />
                     <Collapse isOpen={isOpen} navbar>
                         <Nav className="ml-auto" navbar>
@@ -58,8 +60,8 @@ const Navigation = () => {
                                         <NavLink tag={RouteLink} to="/" onClick={logout}>Logout</NavLink>
                                     </NavItem></>)
                                 : (<NavItem>
-                                    <NavLink tag={RouteLink} to="/login">Login</NavLink>  
-                                </NavItem>)          
+                                        <NavLink tag={RouteLink} to="/login">Login</NavLink>  
+                                    </NavItem>)          
                             }                    
                         </Nav>
                     </Collapse>

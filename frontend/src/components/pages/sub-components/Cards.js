@@ -6,7 +6,7 @@ const cardList = [
         title: "Card One",
         body: "He may play the Jack of diamonds",
         btnText: "Click Me",
-        index: 0
+        index: 0 //Indexes are written here just for quick reference.
     },
     {
         title: "Card Two",

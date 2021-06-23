@@ -14,7 +14,8 @@ const Home = () => {
                         </Col>
                         <Col lg="5">
                             <h1 className="font-weight-light">Business Name or Tagline</h1>
-                            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. Feel free to use this template for any project you want!</p>
+                            <p>This is a template that is great for small businesses. It doesn't have too much fancy flare to it, but it makes a great use of the standard Bootstrap core components. 
+                            React is used for the frontend and Express is used for the backend. Feel free to use this template for any project you want!</p>
                             <Button color="primary">Call to Action!</Button>
                         </Col>
                     </Row>

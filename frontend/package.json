@@ -1,6 +1,7 @@
 {
-  "name": "portfolio",
-  "version": "0.1.0",
+  "name": "fs1010-2021-course-project",
+  "version": "1.0.0",
+  "description": "A basic frontend application using React.",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

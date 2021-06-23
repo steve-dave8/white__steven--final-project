@@ -13,6 +13,11 @@ h2 {
   text-align: center;
 }
 
+hr {
+  border: 1px solid black;
+  width: 40%;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -25,7 +30,21 @@ div#root {
   padding-bottom: 120px; /* height of footer */
 }
 
+.alert {
+  color: rgb(114, 5, 5);
+  background-color: #f1d6d6;
+}
+
+.hidden {
+  display: none;
+}
+
 /*Header*/
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 li.nav-item {
   margin: 0 1rem;
   background-color: #4889af;
@@ -41,7 +60,7 @@ a.nav-link {
 }
 
 li.nav-item.private {
-  background-color: purple;
+  background-color: #9c569c;
 }
 
 li.nav-item.private:hover {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container, Col, Row, Button, Form, FormGroup, Label, Input, Card, CardBody, CardText } from 'reactstrap'
+import { Container, Col, Row, Button, Form, FormGroup, Label, Input } from 'reactstrap'
 import { useHistory, useLocation } from 'react-router-dom'
 
 const Login = () => {
@@ -7,7 +7,7 @@ const Login = () => {
     let location = useLocation();
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [auth, setAuth] = useState(true)
+    const [alertContent, setAlertContent] = useState(null)
 
     const loginSubmit = async event => { 
         event.preventDefault()
@@ -22,7 +22,7 @@ const Login = () => {
         })
         const payload = await response.json()
         if (response.status >= 400) {
-            setAuth(false)
+            setAlertContent('Invalid credentials, please try again')
         } else {
             sessionStorage.setItem('token', payload.token)
             let { from } = location.state || { from: { pathname: "/submissions" } }
@@ -36,14 +36,8 @@ const Login = () => {
     return (
       <main>
         <Container>
-          {!auth && 
-            <Card className="text-white bg-primary my-5 py-4 text-center">
-              <CardBody>
-                  <CardText className="text-white m-0">Invalid credentials, please try again</CardText>
-              </CardBody>
-            </Card>
-          }
           <Form className="my-5" onSubmit={loginSubmit}>
+            <div className={`alert ${!alertContent ? "hidden" : ""}`}>{alertContent}</div>
             <Row form>
               <Col md={6}>
                 <FormGroup>
