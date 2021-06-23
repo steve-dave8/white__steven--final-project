@@ -21,10 +21,10 @@ Git clone this project. Npm install will need to be run twice: once while in the
 
 ### Environment Setup
 Create a .env file in the root of your backend folder. In this file add the following variables:
-PORT=4000
-JWT_SECRET=(assign any value)
-DATA_USERS_LOCATION=./data/users.json
-DATA_ENTRIES_LOCATION=./data/entries.json
+* PORT=4000
+* JWT_SECRET=(assign any value)
+* DATA_USERS_LOCATION=./data/users.json
+* DATA_ENTRIES_LOCATION=./data/entries.json
 
 ### Data
 In the backend folder some sample data is made available in the users.json and entries.json files. You may wish to add these files to gitignore. To test the login functionality you can use the email test@gmail.com with the password 12345678 (note: passwords are hashed using bcrypt before being added to users.json).
